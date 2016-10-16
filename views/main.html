@@ -1,9 +1,13 @@
 <h1>{{ heading }}</h1>
 <p>{{ message }}</h1>
 
-
-    <div>
-        <div ng-repeat="person in data">
-            <p>{{person}}</p>
-        </div>
+<div>
+    <div ng-repeat="person in data">
+        <p>
+            <b>{{ person.name }}</b>
+            -
+            <span ng-repeat="film in person.films">{{film}}</span>
+        </p>
     </div>
+    <hr>
+</div>
