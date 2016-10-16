@@ -1,7 +1,14 @@
 angularApp.controller('MainCtrl', [
   '$scope',
-  function($scope){
-    $scope.heading = "SWAPI app";
-    $scope.message = "Exercice app";
+  'SwapiService',
+  function($scope, SwapiService){
+    $scope.heading = "Angular app";
+    $scope.message = "exercice";
+
+    SwapiService.people()
+      .then(function(data) {
+        $scope.data = data.data.results;
+    });
+
   }
 ]);
